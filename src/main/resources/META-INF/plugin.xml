@@ -1,0 +1,36 @@
+<idea-plugin>
+    <id>com.v.namingx</id>
+    <name>NamingX</name>
+    <vendor email="li1v@qq.com">1V</vendor>
+
+    <description><![CDATA[
+    <h2>我们不只是在给变量命名，我们是在创造艺术。</h2>
+    <p>计算机科学界有两大难题：缓存失效和命名。现在，我们可以划掉其中一个了。</p>
+    <p>NamingX 不是一个简单的插件，它是你编码旅程中的智能副驾驶。它优雅、直观，并且充满魔力。</p>
+    <br>
+    <h3>为什么选择 NamingX？</h3>
+    <ul>
+        <li><strong>极致的智能</strong>：基于先进的 AI 模型，它不仅仅是猜测，通过理解你的意图，给出最精准、最优雅的命名建议。</li>
+        <li><strong>不仅仅是名字</strong>：每一个建议都附带了幽默而深刻的解释（支持简体中文），让枯燥的编码瞬间变得有趣。</li>
+        <li><strong>无缝集成</strong>：它就在那里，当你需要它时，它随时待命。从 CamelCase 到 snake_case，一切尽在掌握。</li>
+        <li><strong>完全掌控</strong>：你可以配置自己的模型、API 端点。这是你的工具，应该由你来定义。</li>
+    </ul>
+    <br>
+    <p>再一次，让代码不仅仅是代码，而是诗篇。</p>
+    <p><em>NamingX - Stay hungry, stay foolish.</em></p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="NamingX" secondary="true" icon="AllIcons.Actions.IntentionBulb"
+                    anchor="right"
+                    factoryClass="com.v.namingx.ui.NamingToolWindowFactory"/>
+
+        <applicationConfigurable parentId="tools" instance="com.v.namingx.AppSettingsConfigurable"
+                                 id="com.v.namingx.AppSettingsConfigurable"
+                                 displayName="NamingX"/>
+
+        <applicationService serviceImplementation="com.v.namingx.AppSettings"/>
+    </extensions>
+</idea-plugin>
